@@ -83,6 +83,8 @@ int arm64_gen_mov_imm(char type, arm64_register destinationReg, optional_uint64_
 int arm64_dec_mov_imm(uint32_t inst, arm64_register *destinationRegOut, uint64_t *immOut, uint64_t *shiftOut, char *typeOut);
 int arm64_gen_add_imm(arm64_register destinationReg, arm64_register sourceReg, optional_uint64_t optImm, uint32_t *bytesOut, uint32_t *maskOut);
 int arm64_dec_add_imm(uint32_t inst, arm64_register *destinationRegOut, arm64_register *sourceRegOut, uint16_t *immOut);
+int arm64_gen_sub_imm(arm64_register destinationReg, arm64_register sourceReg, optional_uint64_t optImm, optional_bool optS, uint32_t *bytesOut, uint32_t *maskOut);
+int arm64_dec_sub_imm(uint32_t inst, arm64_register *destinationRegOut, arm64_register *sourceRegOut, uint16_t *immOut, bool *sOut);
 int arm64_gen_ldr_imm(char type, arm64_ldr_str_type instType, arm64_register destinationReg, arm64_register addrReg, optional_uint64_t optImm, uint32_t *bytesOut, uint32_t *maskOut);
 int arm64_dec_ldr_imm(uint32_t inst, arm64_register *destinationReg, arm64_register *addrReg, uint64_t *immOut, char *typeOut, arm64_ldr_str_type *instTypeOut);
 int arm64_gen_ldrs_imm(char type, arm64_ldr_str_type instType, arm64_register destinationReg, arm64_register addrReg, optional_uint64_t optImm, uint32_t *bytesOut, uint32_t *maskOut);
